@@ -1,6 +1,9 @@
 import React from "react";
-import "./index.css";
-import FormHandle from "./components/FormHandle";
+import ToDoList from "./components/ToDoList";
+import "./styles/Todo.css";
+
+// import "./index.css";
+// import FormHandle from "./components/FormHandle";
 // import Netflix from "./components/Netflix";
 // import data from "./data";
 // import Form from "./components/Form";
@@ -15,7 +18,8 @@ function App() {
       {data.map((item) => {
         return <Netflix item={item} key={item.id} />;
       })} */}
-      <FormHandle />
+      {/* <FormHandle /> */}
+      <ToDoList />
     </div>
   );
 }
