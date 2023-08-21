@@ -1,6 +1,6 @@
-import React from "react";
-import ToDoList from "./components/ToDoList";
-import "./styles/Todo.css";
+import React, { createContext } from "react";
+// import ToDoList from "./components/ToDoList";
+// import "./styles/Todo.css";
 
 // import "./index.css";
 // import FormHandle from "./components/FormHandle";
@@ -8,6 +8,12 @@ import "./styles/Todo.css";
 // import data from "./data";
 // import Form from "./components/Form";
 // import FormList from "./components/FormList";
+import ComA from "./contextApi/ComA";
+import ComX from "./contextApi/ComX";
+import ComZ from "./useContext/ComZ";
+
+const FirstName = createContext();
+const LastName = createContext();
 function App() {
   return (
     <div>
@@ -19,9 +25,17 @@ function App() {
         return <Netflix item={item} key={item.id} />;
       })} */}
       {/* <FormHandle /> */}
-      <ToDoList />
+      {/* <ToDoList /> */}
+      <FirstName.Provider value={"Ashadujjaman"}>
+        <ComA />
+        <ComX />
+        <LastName.Provider value={"Noyon"}>
+          <ComZ />
+        </LastName.Provider>
+      </FirstName.Provider>
     </div>
   );
 }
 
 export default App;
+export { FirstName, LastName };
